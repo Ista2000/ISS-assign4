@@ -9,7 +9,7 @@ def add(x, y):
 def test1():
     x = 1
     y = 2
-    assert add(x, y) == x - y
+    assert add(x, y) == x + y
 
 
 def t():
