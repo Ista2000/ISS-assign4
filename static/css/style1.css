@@ -6,272 +6,26 @@ Author URI: http://www.vlabs.ac.in
 Description: The theme to accompany the profile site for vlabs.ac.in
 Version: 1.0
 */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+/
+/*
+try to alter with above URL and check which fit the best
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+*/
 body {
-    
-    font-family:Calibri !important;
+    overflow-x: hidden;
+   font-family: 'Open Sans', sans-serif;
 }
 
 p {
-    font-size: 16px;
+    font-size: 20px;
 }
 
-/*** Calendar **********************/
-.content .container-fluid div.calender  { position: relative; }
-
-.container-fluid .calender  table {
-cursor:pointer;
-border:1px solid #ccc;
-font-size: 11px;
-color: #000;
-background: #fff;
-font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
-}
-
-.container-fluid .calender  .button { 
-text-align: center;    
-padding: 2px;          
-}
-
-.container-fluid .calender  .nav {
-background:#f5f5f5;
-}
-
-.container-fluid .calender  thead .title { 
-font-weight: bold;      
-text-align: center;
-background: #dedede;
-color: #000;
-padding: 2px 0 3px 0;
-}
-
-.container-fluid .calender  thead .headrow { 
-background: #f5f5f5;
-color: #444;
-font-weight:bold;
-}
-
-.container-fluid .calender  thead .daynames { 
-background: #fff;
-color:#333;
-font-weight:bold;
-}
-
-.container-fluid .calender  thead .name { 
-border-bottom: 1px dotted #ccc;
-padding: 2px;
-text-align: center;
-color: #000;
-}
-
-.container-fluid .calender  thead .weekend { 
-color: #666;
-}
-
-.container-fluid .calender  thead .hilite { 
-background-color: #444;
-color: #fff;
-padding: 1px;
-}
-
-.container-fluid .calender  thead .active { 
-background-color: #d12f19;
-color:#fff;
-padding: 2px 0px 0px 2px;
-}
-
-
-.container-fluid .calender  tbody .day { 
-width:1.8em;
-color: #222;
-text-align: right;
-padding: 2px 2px 2px 2px;
-}
-.container-fluid .calender  tbody .day.othermonth {
-font-size: 80%;
-color: #bbb;
-}
-.container-fluid .calender  tbody .day.othermonth.oweekend {
-color: #fbb;
-}
-
-.container-fluid .calender  table .wn {
-padding: 2px 2px 2px 2px;
-border-right: 1px solid #000;
-background: #666;
-}
-
-.container-fluid .calender  tbody .rowhilite td {
-background: #FFF1AF;
-}
-
-.container-fluid .calender  tbody .rowhilite td.wn {
-background: #FFF1AF;
-}
-
-.container-fluid .calender  tbody td.hilite { 
-padding: 1px 1px 1px 1px;
-background:#444 !important;
-color:#fff !important;
-}
-
-.container-fluid .calender  tbody td.active { 
-color:#fff;
-background: #529214 !important;
-padding: 2px 2px 0px 2px;
-}
-
-.container-fluid .calender  tbody td.selected { 
-font-weight: bold;
-border: 1px solid #888;
-padding: 1px 1px 1px 1px;
-background: #f5f5f5 !important;
-color: #222 !important;
-}
-
-.container-fluid .calender  tbody td.weekend { 
-color: #666;
-}
-
-.container-fluid .calender  tbody td.today { 
-font-weight: bold;
-color: #529214;
-background:#D9EFC2;
-}
-
-.container-fluid .calender  tbody .disabled { color: #999; }
-
-.container-fluid .calender  tbody .emptycell { 
-visibility: hidden;
-}
-
-.container-fluid .calender  tbody .emptyrow { 
-display: none;
-}
-
-.container-fluid .calender  tfoot .footrow { 
-text-align: center;
-background: #556;
-color: #fff;
-}
-
-.container-fluid .calender  tfoot .ttip { 
-background: #222;
-color: #fff;
-font-size:10px;
-border-top: 1px solid #dedede;
-padding: 3px;
-}
-
-.container-fluid .calender  tfoot .hilite { 
-background: #aaf;
-border: 1px solid #04f;
-color: #000;
-padding: 1px;
-}
-
-.container-fluid .calender  tfoot .active { 
-background: #77c;
-padding: 2px 0px 0px 2px;
-}
-
-.container-fluid .calender  .combo {
-position: absolute;
-display: none;
-top: 0px;
-left: 0px;
-width: 4em;
-border: 1px solid #ccc;
-background: #f5f5f5;
-color: #222;
-font-size: 90%;
-z-index: 100;
-}
-
-.container-fluid .calender  .combo .label,
-.container-fluid .calender  .combo .label-IEfix {
-text-align: center;
-padding: 1px;
-}
-
-.container-fluid .calender  .combo .label-IEfix {
-width: 4em;
-}
-
-.container-fluid .calender  .combo .hilite {
-background: #444;
-color:#fff;
-}
-
-.container-fluid .calender  .combo .active {
-border-top: 1px solid #999;
-border-bottom: 1px solid #999;
-background: #dedede;
-font-weight: bold;
-}
-.container-fluid form li div label
-{
-	clear:both;
-	color:#444;
-	display:block;
-	font-size:9px;
-	line-height:9px;
-	margin:0;
-	padding-top:3px;
-}
-
-.container-fluid form li span label
-{
-	clear:both;
-	color:#444;
-	display:block;
-	font-size:9px;
-	line-height:9px;
-	margin:0;
-	padding-top:3px;
-}
-.container-fluid form li .datepicker
-{
-	cursor:pointer !important;
-	float:left;
-	height:16px;
-	margin:.1em 5px 0 0;
-	padding:0;
-	width:16px;
-}
-.container-fluid input.text
-{
-	background:#fff url(../../../images/shadow.gif) repeat-x top;
-	border-bottom:1px solid #ddd;
-	border-left:1px solid #c3c3c3;
-	border-right:1px solid #c3c3c3;
-	border-top:1px solid #7c7c7c;
-	color:#333;
-	font-size:100%;
-	margin:0;
-	padding:2px 0;
-}
 p.small {
     font-size: 16px;
 }
 
-
-.container-fluid form ul
-{
-	font-size:200%;
-	list-style-type:none;
-	margin:0;
-	padding:0;
-	width:100%;
-}
-
-.container-fluid form li
-{
-	display:block;
-	margin:0;
-	padding:4px 5px 2px 9px;
-	position:relative;
-}
 a,
 a:hover,
 a:focus,
@@ -314,10 +68,6 @@ a.active {
 .navbar-default,
 .navbar-inverse {
     border: 0;
-}
-.footer-div
-{
-margin-top:120px;
 }
 
 /*******************************************************************************/
@@ -406,7 +156,7 @@ margin-top:120px;
 
 .menu-ul
 {
-	margin-top: 45px;
+	margin-top: 52px;
 }
 
 @media only screen and (max-width: 375px) {
@@ -567,13 +317,11 @@ margin-top:120px;
 	.footer-div
 	{
 	background-size: cover !important;
-	position:absolute; bottom:0;
 	 }
 	 
 	 .lab-list-col-10
 	 {
 	 	/* background: none !important; */
-	 	overflow:hidden;
 	 }
 	 
 	.featured-labs-main-div
@@ -581,7 +329,6 @@ margin-top:120px;
 		margin-top: -35px !important;	
 	}
 }
-
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) { 
  
@@ -652,10 +399,13 @@ margin-top:120px;
 
 .col-md-2-5-2
 {
-	  padding-right: 15px;
-  padding-left: 15px;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 /*************************************************************/
+.row-container-height{
+	height:180px;
+}
 
 .featured-labs-div
 {
@@ -700,13 +450,19 @@ a:focus
 .featured-labs
 {
 	min-height: 208px !important;
+	/*overflow: hidden;
+ 	text-overflow: ellipsis;
+ 	display: -webkit-box;
+ 	-webkit-line-clamp: 3;
+ 	-webkit-box-orient: vertical;*/
 }
 /*========================font classes=======================*/
 .text-h2-lightblue
 {
 	color: #2C99CE;
 	font-size: 1.8em;
-	
+	margin-left: 0.8em;
+	font-size: 1.2em;
 }
 
 .text-a-lightgreen
@@ -738,8 +494,8 @@ a:focus
 .text-h3-darkblue-bold
 {
 	color: #3e6389;
-	font-size: 1.4em;
-	font-weight: bold;
+	font-size: 1em;
+	font-weight: normal;
 }
 
 .text-h3-darkblue
@@ -751,7 +507,7 @@ a:focus
 .text-normal-gray-small
 {
 	color: #888;
-	font-size: 16px;
+	font-size: 12px;
 }
 
 .text-normal-gray-big
@@ -759,11 +515,7 @@ a:focus
 	color: #888;
 	font-size: 30px;
 }
-#experiment-article-section-1-heading
-{
-color: #888;
-font-size: 30px;
-}
+
 .text-normal-gray-smallest
 {
 	color: #888;
@@ -976,15 +728,21 @@ font-size: 30px;
 {
   position: absolute;
   top: 140px;
-  left: 42%;	
+  left: 3.7%;	
   width: 150%;
 }
 
 .banner-caption-text
 {
+<<<<<<< HEAD
 	font-size: 2.0em;	
+	text-align: left;
+=======
+	font-size: 1.2em;	
+>>>>>>> f3b4f22ca1ec6639cf95185650d5427a8bca30ee
 	line-height: normal;
 	color: black;
+	
 }
 
 
