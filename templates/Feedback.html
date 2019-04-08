@@ -98,7 +98,31 @@
 						<div class="col-md-10 lab-list-col-10">
 							
 							<!--edit -->
-<h1 class="text-h2-lightblue">Public-Key Cryptosystems (PKCSv1.5)</h1><a href="http://feedback.vlabs.ac.in/">Feedback</a>						</div>
+<h1 class="text-h2-lightblue">Public-Key Cryptosystems (PKCSv1.5)</h1>
+{#                            <a href="http://feedback.vlabs.ac.in/">Feedback</a>#}
+                            {%- for category, message in get_flashed_messages(with_categories = true) %}
+                                {%- if category == "error" %}
+                             <div class = "alert alert-danger">
+                                {{ message }}
+                             </div>
+                                {%- else %}
+                             <div class = "alert alert-success">
+                                {{ message }}
+                             </div>
+                                {%- endif %}
+                          {%- endfor %}
+
+                          <form action = "{{ request.path }}" method = "post">
+                             <label for = "first_name">First Name</label><br>
+                             <input type = "text" name = "first_name" placeholder = "First Name" /><br>
+                             <label for = "last_name">Last Name</label><br>
+                             <input type = "text" name = "last_name" placeholder = "Last Name" /><br>
+                             <label for = "email">Email</label><br>
+                             <input type = "text" name = "email" placeholder = "Email" /><br>
+                             <textarea name = "feedback" placeholder = "Feedback"></textarea><br>
+                             <input type = "submit" value = "Submit" />
+                          </form>
+                        </div>
 					</div>
 			</div>
 			<!-- =================================================================================================================================== -->
