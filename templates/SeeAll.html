@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All</title>
+</head>
+<body>
+    {% for feedback in feedbacks %}
+        {{ feedback.id }}: {{ feedback.first_name }} {{ feedback.last_name }} {{ feedback.email }}: {{ feedback.feedback }}<br>
+    {% endfor %}
+</body>
+</html>

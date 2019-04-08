@@ -1,7 +1,9 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, flash, redirect, url_for
+from .models import db, Feedback
 
 import json
 import utils
+
 
 main = Blueprint('main', __name__)
 
@@ -47,9 +49,33 @@ def further_readings():
     return render_template('Further Readings.html')
 
 
-@main.route('/feedback')
+@main.route('/feedback', methods=['GET', 'POST'])
 def feedback():
+    if request.method == 'POST':
+        if not request.form['first_name'] or not request.form['last_name'] or not request.form['email']:
+            flash('Please enter your details.', 'error')
+        else:
+            if len(request.form['first_name']) < 2:
+                flash("First name too short", "error")
+            elif len(request.form['last_name']) < 2:
+                flash("Last name too short", "error")
+            elif request.form['email'].find('@') == -1:
+                flash("Please enter valid email", "error")
+            else:
+                response = Feedback(first_name=request.form['first_name'], last_name=request.form['last_name'],
+                                email=request.form['email'], feedback=request.form['feedback'])
+                print(response)
+                db.session.add(response)
+                db.session.commit()
+
+                flash("Your feedback was recorded successfully", 'success')
+                return redirect(url_for('main.feedback'))
     return render_template('Feedback.html')
+
+
+@main.route('/see-all-feedback')
+def see_all():
+    return render_template('SeeAll.html', feedbacks=Feedback.query.all())
 
 
 @main.route('/api/generate')
@@ -89,4 +115,3 @@ def encrypt():
 def decrypt():
     return utils.decrypt(request.args.get('crypto'), request.args.get('n'), request.args.get('e'),
                          request.args.get('d'), request.args.get('p'), request.args.get('q'))
-
