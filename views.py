@@ -53,7 +53,7 @@ def evaluate():
         one_correct = True
     if sub_q2 == "240":
         two_correct = True
-    if sub_q3 == "Private"
+    if sub_q3 == "Private":
         three_correct = True
     if sub_q4 == "Yes":
         four_correct = True
