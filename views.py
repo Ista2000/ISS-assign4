@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import db, Feedback
+from .models import db, Feedback, Quiz
 
 import json
 from . import utils
@@ -37,24 +37,29 @@ def manual():
 @main.route('/quizzes', methods=['GET', 'POST'])
 def quizzes():
     if request.method == 'POST':
-        one_correct = False
-        two_correct = False
-        three_correct = False
-        four_correct = False
+        one_correct = 0
+        two_correct = 0
+        three_correct = 0
+        four_correct = 0
         sub_q1 = request.form['q1']
         sub_q2 = request.form['q2']
         sub_q3 = request.form['q3']
         sub_q4 = request.form['q4']
         sub_q5 = request.form['q5']
         if sub_q1 == "22":
-            one_correct = True
+            one_correct = 1
         if sub_q2 == "240":
-            two_correct = True
+            two_correct = 1
         if sub_q3 == "Private":
-            three_correct = True
+            three_correct = 1
         if sub_q4 == "Yes":
-            four_correct = True
-        checked = [one_correct, two_correct, three_correct, four_correct]
+            four_correct = 1
+        response = Quiz(sub_q1=sub_q1, sub_q2=sub_q2, sub_q3=sub_q3, sub_q4=sub_q4, sub_q5=sub_q5)
+        print(response)
+        db.session.add(response)
+        db.session.commit()
+        flash("You got " + str(one_correct + two_correct + three_correct + four_correct) + " correct out of 4")
+
     return render_template('Quizzes.html')
 
 
@@ -90,6 +95,11 @@ def feedback():
                 flash("Your feedback was recorded successfully", 'success')
                 return redirect(url_for('main.feedback'))
     return render_template('Feedback.html')
+
+
+@main.route('/see-all-quizzes')
+def see_all_quizzes():
+    return render_template('SeeAllQuizzes.html', quizzes=Quiz.query.all())
 
 
 @main.route('/see-all-feedback')

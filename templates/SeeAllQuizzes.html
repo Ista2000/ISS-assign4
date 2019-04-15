@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz answers</title>
+</head>
+<body>
+    {% for quiz in quizzes %}
+        {{ quiz.id }}: {{ quiz.sub_q1 }} {{ quiz.sub_q2 }} {{ quiz.sub_q3 }} {{ quiz.sub_q4 }} {{ quiz.sub_q5 }}<br>
+    {% endfor %}
+</body>
+</html>

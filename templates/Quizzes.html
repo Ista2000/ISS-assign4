@@ -115,7 +115,7 @@
  </div>
     {%- endif %}
 {%- endfor %}
-<form action="{{ url_for('main.evaluate') }}" >
+<form action="{{ request.path }}" method="post">
 <ol>
 <li>Let p = 17, q = 11 and N = pq. If (in the public-key) e= 7, then a possible value for the trap-door d (in the private-key) in an RAS cryptosystem is
 			<ol list-style-type="lower-latin">
