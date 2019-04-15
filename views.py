@@ -40,7 +40,7 @@ def quizzes():
         one_correct = 0
         two_correct = 0
         three_correct = 0
-        four_correct = 0
+        four_correct = 1
         sub_q1 = request.form['q1']
         sub_q2 = request.form['q2']
         sub_q3 = request.form['q3']
@@ -52,13 +52,11 @@ def quizzes():
             two_correct = 1
         if sub_q3 == "Private":
             three_correct = 1
-        if sub_q4 == "Yes":
-            four_correct = 1
         response = Quiz(sub_q1=sub_q1, sub_q2=sub_q2, sub_q3=sub_q3, sub_q4=sub_q4, sub_q5=sub_q5)
         print(response)
         db.session.add(response)
         db.session.commit()
-        flash("You got " + str(one_correct + two_correct + three_correct + four_correct) + " correct out of 4")
+        flash("You got " + str(one_correct + two_correct + three_correct) + " correct out of 3")
 
     return render_template('Quizzes.html')
 
@@ -104,7 +102,7 @@ def see_all_quizzes():
 
 @main.route('/see-all-feedback')
 def see_all():
-    return render_template('SeeAll.html', feedbacks=Feedback.query.all())
+    return render_template('SeeAllFeedback.html', feedbacks=Feedback.query.all())
 
 
 @main.route('/api/generate')
