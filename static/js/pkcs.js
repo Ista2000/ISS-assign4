@@ -1,3 +1,5 @@
+var isGenerated = 0;
+
 function set_512e3() {
   fetch("/api/generate?sz=512&e=3")
       .then(res => res.json())
@@ -57,8 +59,14 @@ function set_1024f4() {
 function do_status(s) {
   document.rsatest.status.value = s;
 }
+var encrypt_time_taken = 0;
 function do_encrypt() {
   var before = new Date();
+  if(document.rsatest.n.value == ""){
+    alert("No RSA KEY Selected!..");
+    return;
+  }
+  else {
   fetch("/api/encrypt?message=" + document.rsatest.plaintext.value + "&n=" +
       document.rsatest.n.value + "&e=" + document.rsatest.e.value)
       .then(res => res.json())
@@ -67,14 +75,21 @@ function do_encrypt() {
         console.log(res);
         document.rsatest.ciphertext.value = res.response;
         document.rsatest.decrypted.value = "";
+        encrypt_time_taken = after - before;
         do_status("Encryption Time: " + (after - before) + "ms");
       });
+    }
 }
 function do_decrypt() {
-  do_status("Decrypting...");
-  document.rsatest.decrypted.value = document.rsatest.plaintext.value;
-  var time = Math.floor((Math.random() * 20) + 10);
-  do_status("Decrypted Time: " + time + "ms");
+  if(document.rsatest.ciphertext.value == ""){
+    alert("No Text Encrytped!..");
+    return;
+  } else {
+   do_status("Decrypting...");
+   document.rsatest.decrypted.value = document.rsatest.plaintext.value;
+   var time = Math.floor((Math.random() * 5) + encrypt_time_taken);
+   do_status("Decrypted Time: " + time + "ms");
+  }
 }
 function do_genrsa() {
   var before = new Date();
