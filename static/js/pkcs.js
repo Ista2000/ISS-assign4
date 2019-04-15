@@ -1,5 +1,3 @@
-var isGenerated = 0;
-
 function set_512e3() {
   fetch("/api/generate?sz=512&e=3")
       .then(res => res.json())
