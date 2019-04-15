@@ -21,6 +21,8 @@
 	
 	<link rel="stylesheet" href="{{url_for('static', filename='vendors/font-awesome/css/font-awesome.css')}}">
 
+	<link rel="stylesheet" href="{{url_for('static', filename='css/feedback_form.css')}}">
+
     <!-- Custom CSS -->
     <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
 	<script type="text/javascript" src = 'tabs.js'></script>
@@ -112,15 +114,17 @@
                                 {%- endif %}
                           {%- endfor %}
 
-                          <form action = "{{ request.path }}" method = "post">
-                             <label for = "first_name">First Name</label><br>
-                             <input type = "text" name = "first_name" placeholder = "First Name" /><br>
-                             <label for = "last_name">Last Name</label><br>
-                             <input type = "text" name = "last_name" placeholder = "Last Name" /><br>
-                             <label for = "email">Email</label><br>
-                             <input type = "text" name = "email" placeholder = "Email" /><br>
-                             <textarea name = "feedback" placeholder = "Feedback"></textarea><br>
-                             <input type = "submit" value = "Submit" />
+                          <form class="form-style-1" action = "{{ request.path }}" method = "post">
+							<ul>
+                             <li><label for = "first_name">First Name</label><br></li>
+                             <li><input type = "text" name = "first_name" placeholder = "First Name" /><br></li>
+							 <li><label for = "last_name">Last Name</label><br></li>
+                             <li><input type = "text" name = "last_name" placeholder = "Last Name" /><br></li>
+                             <li><label for = "email">Email</label><br></li>
+                             <li><input type = "text" name = "email" placeholder = "Email" /><br></li>
+							 <li><textarea name = "feedback" placeholder = "Feedback"></textarea><br></li>
+							 <li><input type = "submit" value = "Submit" /></li>
+							</ul>
                           </form>
                         </div>
 					</div>
