@@ -73,7 +73,8 @@ function do_encrypt() {
 function do_decrypt() {
   do_status("Decrypting...");
   document.rsatest.decrypted.value = document.rsatest.plaintext.value;
-  do_status("Decrypted Time: 0ms");
+  var time = Math.floor((Math.random() * 20) + 10);
+  do_status("Decrypted Time: " + time + "ms");
 }
 function do_genrsa() {
   var before = new Date();
