@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for
 from .models import db, Feedback
 
 import json
-import utils
+from . import utils
 
 
 main = Blueprint('main', __name__)
@@ -34,31 +34,28 @@ def manual():
     return render_template('Manual.html')
 
 
-@main.route('/quizzes')
+@main.route('/quizzes', methods=['GET', 'POST'])
 def quizzes():
+    if request.method == 'POST':
+        one_correct = False
+        two_correct = False
+        three_correct = False
+        four_correct = False
+        sub_q1 = request.form['q1']
+        sub_q2 = request.form['q2']
+        sub_q3 = request.form['q3']
+        sub_q4 = request.form['q4']
+        sub_q5 = request.form['q5']
+        if sub_q1 == "22":
+            one_correct = True
+        if sub_q2 == "240":
+            two_correct = True
+        if sub_q3 == "Private":
+            three_correct = True
+        if sub_q4 == "Yes":
+            four_correct = True
+        checked = [one_correct, two_correct, three_correct, four_correct]
     return render_template('Quizzes.html')
-
-@main.route('/evaluate', methods=['POST'])
-def evaluate():
-    one_correct = False
-    two_correct = False
-    three_correct = False
-    four_correct = False
-    sub_q1 = request.form['q1']
-    sub_q2 = request.form['q2']
-    sub_q3 = request.form['q3']
-    sub_q4 = request.form['q4']
-    sub_q5 = request.form['q5']
-    if sub_q1 == "22":
-        one_correct = True
-    if sub_q2 == "240":
-        two_correct = True
-    if sub_q3 == "Private":
-        three_correct = True
-    if sub_q4 == "Yes":
-        four_correct = True
-    checked = [one_correct, two_correct, three_correct, four_correct]
-    return render_template('SeeAll.html', evaluated=checked)
 
 
 @main.route('/procedure')

@@ -18,7 +18,6 @@ class Quiz(db.Model):
     __tablename__ = 'quiz_submissions'
 
     id = db.Column('id', db.Integer, primary_key=True)
-    # date_added = db.Column(DateTime, default=datetime.datetime.now)
     sub_q1 = db.Column('q1', db.String(10))
     sub_q2 = db.Column('q2', db.String(10))
     sub_q3 = db.Column('q3', db.String(10))
