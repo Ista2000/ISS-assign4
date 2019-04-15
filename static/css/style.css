@@ -9,11 +9,15 @@ Version: 1.0
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700,500,600);
 body {
     overflow-x: hidden;
-    font-family:'Raleway' !important;
+		font-family:'Raleway' !important;
+		min-height: 100vh;
 }
 
 p {
     font-size: 16px;
+}
+.content{
+	min-height: 45vh;
 }
 
 /*** Calendar **********************/
