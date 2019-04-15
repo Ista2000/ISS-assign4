@@ -14,13 +14,16 @@ class Feedback(db.Model):
     def __repr__(self):
         return str(self.id) + ": " + self.first_name + " " + self.last_name
 
+
 class Quiz(db.Model):
     __tablename__ = 'quiz_submissions'
 
     id = db.Column('id', db.Integer, primary_key=True)
-    # date_added = db.Column(DateTime, default=datetime.datetime.now)
     sub_q1 = db.Column('q1', db.String(10))
     sub_q2 = db.Column('q2', db.String(10))
     sub_q3 = db.Column('q3', db.String(10))
     sub_q4 = db.Column('q4', db.String(10))
-    sub_q5 = db.Column('q5', db.String(120)) # Fix max length when implementing flash method in views.py    
+    sub_q5 = db.Column('q5', db.String(120))
+
+    def __repr__(self):
+        return str(self.id)

@@ -104,7 +104,18 @@
 							
 							<!--edit -->
 <h1 class="text-h2-lightblue">Public-Key Cryptosystems (PKCSv1.5)</h1><div class="content" id="experiment-article-section-6-content">
-<form action="{{ url_for('main.evaluate') }}" >
+{%- for category, message in get_flashed_messages(with_categories = true) %}
+    {%- if category == "error" %}
+ <div class = "alert alert-danger">
+    {{ message }}
+ </div>
+    {%- else %}
+ <div class = "alert alert-success">
+    {{ message }}
+ </div>
+    {%- endif %}
+{%- endfor %}
+<form action="{{ request.path }}" method="post">
 <ol>
 <li>Let p = 17, q = 11 and N = pq. If (in the public-key) e= 7, then a possible value for the trap-door d (in the private-key) in an RAS cryptosystem is
 			<ol list-style-type="lower-latin">
