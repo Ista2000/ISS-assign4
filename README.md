@@ -32,20 +32,20 @@ Deployed on heroku at https://shrouded-mountain-98925.herokuapp.com/
         - `q`: The second prime in the private key
     - Returns the decrypted message
 
-# Util functions
+## Util functions
 - The functions all use the `rsa` python library which can be installed using `pip3 install rsa`
 - All the util functions are written in `utils.py`
     - `generate(sz, e)`: returns `n`, `e`, `p`, `q`, `d % (p-1)`, `d % (q-1)`, `coeff`, `d` 
     - `encrypt(message, n, e)`: returns the encrypted message
     - `decrypt(crypto, n, d, e, p, q)`: returns the decrypted message
 
-# Design patterns identified
+## Design patterns identified
 - Factory pattern while initializing the database. An empty constructor is used to create an instant of the database object in the `models.py` file but the app context is added in `app.py`
 - Singleton pattern while initializing the database. There cannot exist two different instants of the database object at some point of time, that is why a singleton pattern is alays used when initializing a database connection object
 
-# Continuous integration
+## Continuous integration
 - Implemented continuous integration using TravisCI. The `.travis.yml` file is the config file used.
 - Unit test cases written in `tests.py`
 
-# Continuous Deployment
+## Continuous Deployment
 - A pipeline is set up in Heroku for continuous deployment. The link is given above. The `Procfile` file is the config file used.
