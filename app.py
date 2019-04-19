@@ -4,7 +4,7 @@ from .models import db
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-app.secret_key = 'istasismishra'
+app.secret_key = 'vlabs-crypt0-exp-pkcs-1.5-iss-assign-2018-ug2k18-istasis-kishan'
 
 app.register_blueprint(main)
 
