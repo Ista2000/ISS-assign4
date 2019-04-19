@@ -13,7 +13,7 @@
 
 Deployed on heroku at https://shrouded-mountain-98925.herokuapp.com/
 
-> **Note** : In case of $\LaTeX$ not rendering properly (i.e, showing $'s), install extension for browser to enable $\LaTeX$ on github markdown. (Eg: For Chrome - [this](https://chrome.google.com/webstore/detail/tex-all-the-things/cbimabofgmfdkicghcadidpemeenbffn/related?hl=en))
+> **Note** : In case of $\LaTeX$ not rendering properly (i.e, showing \$'s), install extension for browser to enable $\LaTeX$ on github markdown. (Eg: For Chrome - [this](https://chrome.google.com/webstore/detail/tex-all-the-things/cbimabofgmfdkicghcadidpemeenbffn/related?hl=en))
 
 
 # Table of Contents <!-- omit in toc -->
