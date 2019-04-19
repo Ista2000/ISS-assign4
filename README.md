@@ -4,7 +4,7 @@
 
 - As part of this assignment we ported experiment PKCS_v1.5 of Cryptography lab which is written with PHP as backend to Flask with MVC.
 - Used OOPS-Concepts (Classes) to add *Database* functionality for storing Feedback entered & also the responses of Quizzes. [Routes for retreiving Data from Database](#routes-for-retreiving-data-from-database)
-- Implemented *API* for experiment and made calls to it from Javascript, this ensures end users cannot see the logic behind the experiment which was previously written in Javascript. ([API reference](#api-reference))
+- Implemented *API* for experiment and made calls to it from Javascript, this ensures end users cannot see the logic behind the experiment which was previously written in Javascript. [API reference](#api-reference)
 - Used [Design & Architectural Patterns](#design--architecural-patterns-used).
 - Created unit test cases & implemented [Continuous Integration](#continuous-integration) using Travis
 - Used Heroku for [Continuous Deployment](#continuous-deployment)
@@ -74,9 +74,11 @@ divisible by both p-1 and q-1.
 
 An RSA public key shall have ASN.1 type RSAPublicKey:
 
+```
 RSAPublicKey ::= SEQUENCE {
    modulus INTEGER, -- n
    publicExponent INTEGER -- e }
+```
 
 The fields of type RSAPublicKey have the following meanings:
 
@@ -87,6 +89,7 @@ The fields of type RSAPublicKey have the following meanings:
 
 An RSA private key shall have ASN.1 type RSAPrivateKey:
 
+```
 RSAPrivateKey ::= SEQUENCE {
    version Version,
    modulus INTEGER, -- n
@@ -97,6 +100,7 @@ RSAPrivateKey ::= SEQUENCE {
    exponent1 INTEGER, -- d mod (p-1)
    exponent2 INTEGER, -- d mod (q-1)
    coefficient INTEGER -- (inverse of q) mod p }
+```
 
 The fields of type RSAPrivateKey have the following meanings:
 
