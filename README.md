@@ -3,7 +3,7 @@
 ## Abstract <!-- omit in toc -->
 
 - As part of this assignment we ported experiment PKCS_v1.5 of Cryptography lab which is written with PHP as backend to Flask with MVC.
-- Used OOPS-Concepts (Classes) to add **Database** functionality for storing Feedback entered & also the responses of Quizzes. [Routes for retreiving Data from Database](#routes-for-retreiving-data-from-database)
+- Used OOPS-Concepts (Classes) to add *Database* functionality for storing Feedback entered & also the responses of Quizzes. [Routes for retreiving Data from Database](#routes-for-retreiving-data-from-database)
 - Implemented *API* for experiment and made calls to it from Javascript, this ensures end users cannot see the logic behind the experiment which was previously written in Javascript. ([API reference](#api-reference))
 - Used [Design & Architectural Patterns](#design--architecural-patterns-used).
 - Created unit test cases & implemented [Continuous Integration](#continuous-integration) using Travis
@@ -12,6 +12,8 @@
 
 
 Deployed on heroku at https://shrouded-mountain-98925.herokuapp.com/
+
+> **Note** : In case of $\LaTeX$ not rendering properly (i.e, showing $'s), install extension for browser to enable $\LaTeX$ on github markdown. (Eg: For Chrome - [this](https://chrome.google.com/webstore/detail/tex-all-the-things/cbimabofgmfdkicghcadidpemeenbffn/related?hl=en))
 
 
 # Table of Contents <!-- omit in toc -->
@@ -165,7 +167,7 @@ Note. The integer encryption block x satisfies $0 \le x <  n$ since EB1
 The integer encryption block x shall be raised to the power c modulo
 n to give an integer y, the integer encrypted data.
 
-$$y = x^c \mod n \ ,\ \ 0 \le y < n$$
+$$y = x^c \bmod n \ ,\ \ 0 \le y < n$$
 
 This is the classic RSA computation.
 
@@ -213,7 +215,7 @@ y < n$.
 The integer encrypted data y shall be raised to the power c modulo n
 to give an integer x, the integer encryption block.
 
-$$x = y^c \mod n \ ,\ \ 0 \le x < n$$
+$$x = y^c \bmod n \ ,\ \ 0 \le x < n$$
 
 This is the classic RSA computation.
 
